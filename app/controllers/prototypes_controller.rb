@@ -27,7 +27,7 @@ class PrototypesController < ApplicationController
 
   private
 
-  def tweet_params
+  def prototype_params
     params.require(:prototype).permit(:name, :image, :text)
   end
 

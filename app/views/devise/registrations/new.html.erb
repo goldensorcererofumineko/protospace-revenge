@@ -3,7 +3,6 @@
     <div class="form__wrapper">
       <h2 class="page-heading">ユーザー新規登録</h2>
 
-        <%# 「モデル名」にはUserモデルであれば@userを渡しましょう。%>
         <%# 「新規登録機能へのパス」は、devise導入後にrails routesを実行してdevise/registrations#createへのパスを確認し、記載してください。 %>
         <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
 
@@ -14,7 +13,7 @@
 
         <div class="field">
           <%= f.label :password, "パスワード（6文字以上）" %><br />
-          <%= f.password_field :hoge, id:"user_password", autocomplete: "new-password" %>
+          <%= f.password_field :password, id:"user_password", autocomplete: "new-password",autofocus: true, maxlength: "6"  %>
         </div>
 
         <div class="field">
@@ -23,23 +22,23 @@
         </div>
 
         <div class="field">
-          <%= f.label :nickname, "ユーザー名" %><br />
-          <%= f.text_field :nickname, id:"user_name" %>
+          <%= f.label :name, "ユーザー名" %><br />
+          <%= f.text_field :name, id:"user_name" %>
         </div>
 
         <div class="field">
-          <%= f.label :hoge, "プロフィール" %><br />
-          <%= f.text_area :hoge, class: :form__text, id:"user_profile" %>
+          <%= f.label :profile, "プロフィール" %><br />
+          <%= f.text_area :profile, class: :form__text, id:"user_profile" %>
         </div>
 
         <div class="field">
-          <%= f.label :hoge, "所属" %><br />
-          <%= f.text_area :hoge, class: :form__text, id:"user_occupation" %>
+          <%= f.label :group, "所属" %><br />
+          <%= f.text_area :group, class: :form__text, id:"user_group" %>
         </div>
 
         <div class="field">
-          <%= f.label :hoge, "役職" %><br />
-          <%= f.text_area :hoge, class: :form__text, id:"user_position" %>
+          <%= f.label :position, "役職" %><br />
+          <%= f.text_area :position, class: :form__text, id:"user_position" %>
         </div>
 
         <div class="actions">
